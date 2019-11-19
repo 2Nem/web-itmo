@@ -29,7 +29,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     height: 1200px;
-    background: url("/images/bg.jpg") center no-repeat / cover;
+    background: url("./images/bg.jpg") center no-repeat / cover;
     text-align: center;
     text-transform: uppercase;
 }
@@ -99,7 +99,7 @@ li:hover {
 }
 
 .jumbotron {
-    background: url("/images/jumbotron_bg.jpg") center no-repeat / cover;
+    background: url("./images/jumbotron_bg.jpg") center no-repeat / cover;
     height: 800px;
     text-align: right;
 }
