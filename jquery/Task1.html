@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<style>
+	
+</style>
+<!--task1-->
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script>
+	$(document).ready(function() {
+		$("p").css("fontSize", "20px");
+		$("form *").attr("disabled", true);
+		$("a").prepend("↗ ");
+		$("a").attr("target", "_blank");
+		$("[href^='http://']").each(function() {
+			$(this).attr("href", $(this).attr("href").replace("http://", "https://"));
+		});
+		$("#cancel").click(function(){
+			$("a").each(function() {
+				$(this).contents().eq(0).remove();
+			});
+			$("a").removeAttr("target");
+		});
+		$("#hide").click(function() {
+			$("#hid_e ").hide();
+		});
+		$("#fadeOut").click(function() {
+			$("#fade_Out ").fadeOut();
+		});
+		$("#fadeIn").click(function() {
+			$("#div1").fadeIn("slow");
+		});
+		$("#slideDown").click(function() {
+			$("#div2").slideDown();
+		});
+		$("#animate").click(function() {
+			$("#animat_e").animate({fontSize: '10px'});
+		});
+		$("#refresh").click(function(){
+			$("#result1").load("https://inxaoc.github.io/example/ajax-1.html");
+    	});
+		
+		function JParser(data, adr) {
+			var len = Object.keys(data).length;
+			var where = adr;
+			for(var i = 0; i<len; i++) {
+				var ul = where.appendChild(document.createElement("ul"));
+				for(let key in data) {
+					var li = ul.appendChild(document.createElement("li"));
+					
+					if((typeof(data[key]) == "object") && !(Array.isArray(data[key]))) {
+						li.appendChild(document.createTextNode(key));
+						JParser(data[key], li);
+					}
+					else {
+						li.appendChild(document.createTextNode(`"${key}":"${data[key]}"`));
+					}
+				}
+				break;
+			}
+		}
+		
+		$("#ajax_req").click(function(){
+			$("#result2").load("https://inxaoc.github.io/example/ajax.json", "params", function(response) {
+//				$("#result2").empty();
+				adr = document.getElementById("result2")
+				var data = JSON.parse(response);
+				JParser(data, adr);
+			});
+    	});
+	})
+</script>
+</head>
+<body>
+<input id="cancel" type="button" value="OTMENAAAAAAA" style="float:right">
+<form class="subform"  method="post" action="submit.html">
+	<p>
+		<label for="name" class="label">Как вас зовут?</label>
+		<input type="text" name="name" id="name">
+	</p>
+	<p>
+		<label for="email" class="label">Ваш адрес электронной почты</label>
+		<input type="button" value="sad">
+	</p>
+	<p>Код jQuery как и код <a href="http://javascript.ru/">JavaScript</a> состоит из последовательно идущих команд. Команды являются основной структурной единицей <a href="http://asdfwgfjkasdh.ru">jQuery</a>.
+Стандартный синтаксис jQuery команд</p>
+</form>
+<table>
+	<th>Текст</th>
+	<th>Эффект/анимация</th>
+	<tr>
+		<td id="hid_e">hide</td>
+		<td><input id="hide" type="button" value="Try it"></td>
+	</tr>
+	<tr>
+		<td id="fade_Out">fadeOut</td>
+		<td><input id="fadeOut" type="button" value="Try it"></td>
+	</tr>
+	<tr>
+		<td>fadeIn<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div></td>
+		<td><input id="fadeIn" type="button" value="Try it"></td>
+	</tr>
+	<tr>
+		<td>slideDown
+		<div id="div2" style="width:80px;height:80px;display:none;background-color:blue;"></div></td>
+		<td><input id="slideDown" type="button" value="Try it"></td>
+	</tr>
+	<tr>
+		<td id="animat_e">animate</td>
+		<td><input id="animate" type="button" value="Try it"></td>
+	</tr>
+</table>
+<input id="refresh" type="button" value="Подгрузить страницу">
+<div id="result1"></div>
+<input id="ajax_req" type="button" value="Ajax запрос с параметрами">
+<div id="result2"></div>
+</body>
+</html>
