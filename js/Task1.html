@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>Заголовок</title>
+<head>
+</head>
+<body>
+	<a name='ancor1' href='https://vk.com'>Анкор1<a><br>
+	<a name='ancor2' href='https://www.facebook.com'>Анкор2<a><br>
+	<br>
+	<form name="form1"></form><br>
+	<form name="form2"></form><br>
+	<br>
+	<img id="num1" src='https://neironix.io/assets/thumbnails/f7/f71d703bbfe39ecff65ff009cb729020.png'>	
+	<img id="num3" src='https://b2b.case-place.ru/socnetauth2/icons/fb45.png'><br>
+	<script>
+		document.write('Текст');
+		document.write('<br>');
+		document.write('<b>Отформатированный текст</b>');
+		document.write('<br>');
+		document.write('Количество анкоров: ' + document.anchors.length);
+		document.write('<br>');
+		document.write('Содержимое первого анкора: ' + document.anchors[0].innerHTML);
+		document.write('<br>');
+		document.write('Количество форм: ' + document.forms.length);
+		document.write('<br>');
+		document.write('Имя первой формы: ' + document.forms[0].name);
+		document.write('<br>');
+		document.write('Количество картинок: ' + document.images.length);
+		document.write('<br>');
+		document.write('ID первого изображения: ' + document.images[0].id);
+		document.write('<br>');
+		document.write('Количество ссылок: ' + document.links.length);
+		document.write('<br>');
+		document.write('ID первой ссылки: ' + document.links[0].id);
+		document.write('<br>');
+		document.write('Имя домена: ' + document.domain);
+		document.write('<br>');
+		document.write('URL документа, который загрузил текущий документ: ' + document.referrer);
+		document.write('<br>');
+		document.write('Заголовок документа: ' + document.title);
+		document.write('<br>');
+		document.write('Полный адрес URL документа: ' + document.URL);
+	</script>
+</body>
+</html>

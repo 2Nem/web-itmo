@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<img id='img1' src='https://b2b.case-place.ru/socnetauth2/icons/fb45.png'><br>
+<button name='but1' id='button1'>Выровнять по правому краю</button><br>
+<button name='but2' id='button2'>Добавить границу к изображению</button><br>
+<button name='but3' id='button3'>Изменить высоту и ширину изображения</button><br>
+<button name='but4' id='button4'>Изменить источник изображения</button><br>
+<script>
+	function image(){
+		document.getElementById('button1').onclick = function() {document.getElementById('img1').align='right'};
+		document.getElementById('button2').onclick = function() {document.getElementById('img1').border='5'};
+		document.getElementById('button3').onclick = function() 
+		{document.getElementById('img1').height='150'; document.getElementById('img1').width='150';};
+		document.getElementById('button4').onclick = function() {document.getElementById('img1').src='https://neironix.io/assets/thumbnails/f7/f71d703bbfe39ecff65ff009cb729020.png'};
+		document.write('<br>');
+	}
+	image();
+</script>
+
+</body>
+</html>

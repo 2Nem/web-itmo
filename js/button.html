@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form id='form1'>
+<button name='button1' id='button1'>Кнопка 1</button>
+</form>
+<h1>Объект кнопка</h1>
+<script>
+	function button(){
+		document.write('Нажми на кнопку 1: ');
+		document.getElementById('button1').onclick = function() {document.getElementById('button1').disabled = true};
+		document.write('<br>');
+		document.write('Имя кнопки: ' + document.getElementById('button1').name);
+		document.write('<br>');
+		document.write('Тип кнопки: ' + document.getElementById('button1').type);
+		document.write('<br>');
+		document.write('Содержимое кнопки: ' + document.getElementById('button1').innerHTML);
+		document.write('<br>');
+		document.write('ID формы, которой принадлежит кнопка: ' + document.getElementById('button1').form.id);
+	}
+	button();
+</script>
+<h1></h1>
+</body>
+</html>

@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: #fff;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+h1, h2, ul, p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 1200px;
+    background: url("./images/bg.jpg") center no-repeat / cover;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-bottom: 90px;
+    font-size: 200px;
+    font-weight: 700;
+    line-height: 0.9;
+}
+
+.header p {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header .btn {
+    background-color: #000;
+}
+
+.nav {
+    font-size: 0;
+    background-color: #000;
+}
+
+li {
+    font-size: 18px;
+    list-style-type: none;
+    display: inline-block;
+    padding:40px 20px;
+    vertical-align: center;
+    transition: background-color 0.1s linear;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #3228f0;
+}
+
+.main .container {
+    color: #000;
+    margin-top: 100px;
+}
+
+.main__info{
+    display: inline-block;
+    padding-left: 150px;
+}
+
+.main h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.main p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 800px;
+}
+
+.jumbotron {
+    background: url("./images/jumbotron_bg.jpg") center no-repeat / cover;
+    height: 800px;
+    text-align: right;
+}
+.jumbotron .container {
+    position: relative;
+    top: 300px;
+}
+
+.jumbotron h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.jumbotron p {
+    margin-bottom: 25px;
+}
+
+.footer {
+    background-color: #000;
+}
+
+.jumbotron .btn {
+    background-color: #3228f0;
+}
+.footer p {
+    line-height: 80px;
+    margin: 0;
+}

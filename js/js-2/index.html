@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <from id="tableGen">
+            <fieldset>
+                <legend>Форма для создания таблицы</legend>
+                <label>Количество строк</label>
+                <input type="number" id ="getTableRows">
+                <label>Количество столбцов</label>
+                <input type="number" id ="getTableCols">
+                <input type="button" value="Построить таблицу" onclick="createTableButt()">
+                <script src="script.js"></script>
+            </fieldset>
+        </from>
+        <form id="tableEdit">
+            <fieldset>
+                <legend>Блок с функциями</legend>
+                <div>
+                	<label>Ширина таблицы</label>
+                	<input id="width" type="number" onchange="swap()">
+                	<label>Вид рамки</label>
+                	<select id="border" onchange="swap()">
+                		<option value="Solid">Solid</option>
+                		<option value="Dotted">Dotted</option>
+                		<option value="Dashed">Dashed</option>
+                		<option value="Double">Double</option>
+                		<option value="Inset">Inset</option>
+                	</select>
+                	<input type="button" id="Submit" value="Применить" onclick="modTable()">
+                </div>
+                <div>
+                	<label>Добавить заголовок</label>
+                	<input type="text" id="newHeader">
+                	<input type="button" value="Добавить" onclick="addHeader()">
+                </div>
+                <div>
+                	<label>Удалить строку</label>
+                	<input id="delRow" type="number">
+                	<input type="button" value="Удалить" onclick="delRowFunc()">
+                </div>
+                <div>
+                	<input type="button" value="Magic" onclick="magic()">
+                </div>
+                <div>
+                	<label>Удалить</label>
+                	<input type="button" value="Удалить таблицу" onclick="delTab()">
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

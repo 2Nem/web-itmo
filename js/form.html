@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form name='forma' id='form1' action='handler.php' enctype='text/plain' method="post">
+	<p><input type='submit' value='Написать письмо'></p>
+	<p><input type='login' value='Имя отправителя'></p>
+</form>
+<button name='but1' id='button1'>Сбросить форму</button><br>
+<button name='but2' id='button2'>Отправить форму</button><br>
+<script>
+		function form(){
+		document.write('Значение каждого элемента на форме: <br><br>')
+		var x=document.getElementById('form1');
+		for (var i=0;i<x.length;i++)
+  		{
+  			document.write(x.elements[i].value);
+  			document.write("<br />");
+  		}
+		document.write('<br>');
+		document.write('Значение атрибута action формы: ' + document.getElementById('form1').action);
+		document.write('<br>');
+		document.write('Значение атрибута enctype формы: ' + document.getElementById('form1').enctype);
+		document.write('<br>');
+		document.write('Количество элементов на форме: ' + document.getElementById('form1').length);
+		document.write('<br>');
+		document.write('Метод отправки данных с формы: ' + document.getElementById('form1').method);
+		document.write('<br>');
+		document.write('Имя (название) формы: ' + document.getElementById('form1').name);
+		document.write('<br>');
+		document.getElementById('button1').onclick = function() {document.getElementById('form1').reset()};
+		document.write('<br>');
+		document.getElementById('button2').onclick = function() {document.getElementById('form1').submit()};
+		document.write('<br>');	
+		}
+		form();
+</script>
+</body>
+</html>
